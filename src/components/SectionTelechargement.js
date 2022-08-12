@@ -7,7 +7,7 @@ import  GetTelechargment from './get/GetTelechargement';
 
 function SectionTelechargement() {
 
-    const url_api = "http://localhost:9000/telechargement/";
+    const url_api = "https://gero-api.herokuapp.com/telechargement/";
 
     //notes sera l'état des donées reçues depuis la base de donnée
     const [notes, getNotes] = useState('');
