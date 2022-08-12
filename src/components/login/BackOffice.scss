@@ -1,0 +1,42 @@
+@import"../../style/Variables.scss";
+
+.parent-container{
+    h1{
+        text-align: center;
+    }
+    form {
+        width: 40%;
+        margin: auto;
+    }
+
+    form textarea, input{
+            width: 100%;
+    }
+
+    form textarea{
+            height: 300px;
+    }
+
+    form input{
+            height: 30px;
+    }
+    
+}
+
+@include mediaSm{
+    .parent-container{
+        form {
+            width: 90%;
+            margin: auto;
+        }
+    }
+}
+
+@include mediaMd{
+    .parent-container{
+        form {
+            width: 90%;
+            margin: auto;
+        }
+    }
+}
