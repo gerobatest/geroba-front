@@ -18,7 +18,7 @@ function SectionFonc(props) {
     const Existant  = ({ content,limit}) => {
 
     //backend 
-    const url_api = "http://localhost:9000/modeExistant/";
+    const url_api = "https://gero-api.herokuapp.com/modeExistant/";
 
     //state des données reçues
     const [text, getText] = useState('');
@@ -89,7 +89,7 @@ function SectionFonc(props) {
   const Etude = ({ content,limit}) => {
 
     //backend 
-    const url_api = "http://localhost:9000/modeEtude/";
+    const url_api = "https://gero-api.herokuapp.com/modeEtude/";
 
     //state des données reçues
     const [text, getText] = useState('');
@@ -155,7 +155,7 @@ function SectionFonc(props) {
   const Depots = ({ content,limit}) => {
      
     //backend 
-    const url_api = "http://localhost:9000/modeDepot/";
+    const url_api = "https://gero-api.herokuapp.com/modeDepot/";
 
     //state des données reçues
     const [text, getText] = useState('');
@@ -219,7 +219,7 @@ function SectionFonc(props) {
   const Travaux = ({ content,limit}) => {
 
     //backend 
-    const url_api = "http://localhost:9000/modeTravaux/";
+    const url_api = "https://gero-api.herokuapp.com/modeTravaux/";
 
     //state des données reçues
     const [text, getText] = useState('');
@@ -283,7 +283,7 @@ function SectionFonc(props) {
   const Gestion = ({ content,limit}) => {
 
     //backend 
-    const url_api = "http://localhost:9000/modeGestion/";
+    const url_api = "https://gero-api.herokuapp.com/modeGestion/";
 
     //state des données reçues
     const [text, getText] = useState('');
@@ -351,7 +351,7 @@ function SectionFonc(props) {
   const Batiment = ({ content,limit}) => {
 
     //backend 
-    const url_api = "http://localhost:9000/modeRoute/";
+    const url_api = "https://gero-api.herokuapp.com/modeRoute/";
 
     //state des données reçues
     const [text, getText] = useState('');
