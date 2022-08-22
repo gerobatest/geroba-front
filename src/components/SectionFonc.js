@@ -18,7 +18,7 @@ function SectionFonc(props) {
     const Existant  = ({ content,limit}) => {
 
     //backend 
-    const url_api = "https://gero-api.herokuapp.com/modeExistant/";
+    const url_api = "http://localhost:9000/modeExistant/";
 
     //state des données reçues
     const [text, getText] = useState('');
@@ -89,7 +89,7 @@ function SectionFonc(props) {
   const Etude = ({ content,limit}) => {
 
     //backend 
-    const url_api = "https://gero-api.herokuapp.com/modeEtude/";
+    const url_api = "http://localhost:9000/modeEtude/";
 
     //state des données reçues
     const [text, getText] = useState('');
@@ -155,7 +155,7 @@ function SectionFonc(props) {
   const Depots = ({ content,limit}) => {
      
     //backend 
-    const url_api = "https://gero-api.herokuapp.com/modeDepot/";
+    const url_api = "http://localhost:9000/modeDepot/";
 
     //state des données reçues
     const [text, getText] = useState('');
@@ -219,7 +219,7 @@ function SectionFonc(props) {
   const Travaux = ({ content,limit}) => {
 
     //backend 
-    const url_api = "https://gero-api.herokuapp.com/modeTravaux/";
+    const url_api = "http://localhost:9000/modeTravaux/";
 
     //state des données reçues
     const [text, getText] = useState('');
@@ -283,7 +283,7 @@ function SectionFonc(props) {
   const Gestion = ({ content,limit}) => {
 
     //backend 
-    const url_api = "https://gero-api.herokuapp.com/modeGestion/";
+    const url_api = "http://localhost:9000/modeGestion/";
 
     //state des données reçues
     const [text, getText] = useState('');
@@ -346,78 +346,12 @@ function SectionFonc(props) {
     </div>
   }
 
-
-  //contenu du mode route et batiments 
-  const Batiment = ({ content,limit}) => {
-
-    //backend 
-    const url_api = "https://gero-api.herokuapp.com/modeRoute/";
-
-    //state des données reçues
-    const [text, getText] = useState('');
-
-    //Extraire les données depuis l'api (serveur)
-    const getAllText = () =>{
-      axios.get(`${url_api}`)
-      .then((response) => {
-        const allText = response.data; //ce que nous reçevons de l'api
-        getText(allText); //le state contient les données reçues depuis la base de donnée
-      })
-      .catch((error) => {
-        console.error(`Error: ${error}`);
-      })
-    }
-
-    //la fonction est executée dès que la page est rendu (loads)
-    useEffect(()=>{
-      getAllText();
-    })
-     
-    const [modal, setModal] = useState(false);
-    const toggleModal = (event) => {
-        event.preventDefault();
-        setModal(!modal);
-    };
-    if(modal) {
-      document.body.classList.add('active-modal')
-    } else {
-      document.body.classList.remove('active-modal')
-    }
-     
-    if (content.length <= limit) {
-      return <div>{content}</div>
-    }
-
-    const toShow = content.substring(0, limit) + "...";
-    return <div> 
-      {toShow} 
-      <a onClick={toggleModal} className="openFonc" href={"/"}>En savoir plus &#62;</a>
-      {modal && (
-          <div className='modal'>
-              <div onClick={toggleModal} className="overlay"></div>
-                  <div className="PopUp">
-                      <img src="/etape-6.jpg" alt="Mode existant"/>
-                      <h1 className="title">Etape 6</h1>
-                      <p className="lightTitle">Mode Route et Bâtiment</p>
-                      
-                      <GetModeRoute text={text}/>
-
-                      <button className="close-modal" onClick={toggleModal}>
-                        <HiOutlineX />
-                      </button>   
-                  </div> 
-          </div>
-      )}
-    </div>
-  }
-  
-
     return (
         <>
             {/* Contenu visible sur la page*/}
              <div className="sectionContainer" id="fonctions">
-                <div className="sectionImage">
-                    <Parallax translateX={['-200px', '100px']}>    
+                <div className="sectionImage" id="man">
+                    <Parallax translateX={['0px', '200px']}>    
                         <img src="engineer.avif" alt="Construction worker"/>
                     </Parallax>  
                 </div>
@@ -436,7 +370,7 @@ function SectionFonc(props) {
                     <ol>
                         <li>
                             <div className='modeLong'>
-                              <b>Mode « Existant » :</b>
+                              <b>Statut « Existant » :</b>
                               {/* La texte à limiter montrer dans la partie visible*/}
                               <Existant content="C'est ce qui existe sur le terrain, l'état « 0 ». 
                               La solution permet de gérer les équipements dans ses différentes 
@@ -446,7 +380,7 @@ function SectionFonc(props) {
                             </div>  
                         </li>
                         <li>
-                            <b>Mode « Etude » :</b> 
+                            <b>Statut « Etude » :</b> 
                             <div className='modeLong'>
                             <Etude content=" Il s'agit du fruit de l'expertise
                             de l'existant et la définition de ce qu'il devrait y
@@ -455,7 +389,7 @@ function SectionFonc(props) {
                             </div> 
                         </li>
                         <li>
-                            <b>Mode « Dépôts » :</b> 
+                            <b>Statut « Stocks » :</b> 
                             <div>
                                 <Depots content=" Pour les objets qui le
                             nécessitent, c'est la gestion des équipements qui
@@ -465,7 +399,7 @@ function SectionFonc(props) {
                             </div>
                         </li>
                         <li>
-                            <b>Mode « Travaux » :</b>
+                            <b>Statut « Travaux » :</b>
                             <div>
                                 <Travaux content=" La maîtrise d'ouvrage
                                 décide d'engager des travaux de changement
@@ -477,7 +411,7 @@ function SectionFonc(props) {
                             </div>
                         </li>
                         <li>
-                            <b>Mode « Gestion » :</b> 
+                            <b>Statut « Gestion » :</b> 
                             <div>
                               <Gestion content=" Le patrimoine doit être
                               surveillé à la fois sur le plan physique et
@@ -488,23 +422,7 @@ function SectionFonc(props) {
                               limit={125}/>
                             </div>
                         </li>
-                        <li>
-                            <b>Mode « Route et Bâtiment » :</b> 
-                            <div>
-                            <Batiment content="Integer ut odio vitae ex posuere sollicitudin. 
-                              Aliquam lobortis tincidunt aliquet. Donec libero erat, pulvinar 
-                              id nunc id, volutpat laoreet tortor. Praesent dapibus lacus 
-                              molestie. blabalaba"
-                              limit={125}/>
-                            </div>
-                        </li>
                     </ol>
-                    
-                    <p className="paragraph">
-                        Chacun des acteurs peut alimenter la base, définir
-                        des missions, échanger des informations et/ou des
-                        photos en fonction des droits qui lui sont ouverts.
-                    </p>
                 </div>
             </div>
         </>   
