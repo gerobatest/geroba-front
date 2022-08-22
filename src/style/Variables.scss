@@ -69,28 +69,28 @@ $footerXxl: 1120px;
   
 //Tablette & Large phones
 @mixin mediaMd {
-    @media screen and (min-width: 769px) and (max-width: 992px) {
+    @media screen and (min-width: 768.05px) and (max-width: 992px) {
         @content;
     }
 }
 
 //Desktop 
 @mixin mediaLg{
-    @media screen and (min-width: 993px) and (max-width: 1366px) {
+    @media screen and (min-width: 992.05px) and (max-width: 1366px) {
         @content;
     }
 }
 
 //Widescreen 
 @mixin mediaXl {
-    @media screen and (min-width: 1367px) and (max-width: 2559px){
+    @media screen and (min-width: 1366.05px) and (max-width: 2559px){
         @content;
     }
 }
 
 //4K
 @mixin mediaXxl {
-    @media screen and (min-width: 2560px) {
+    @media screen and (min-width: 2559.05px) {
         @content;
     }
 }
