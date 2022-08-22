@@ -18,7 +18,7 @@ function SectionFonc(props) {
     const Existant  = ({ content,limit}) => {
 
     //backend 
-    const url_api = "http://localhost:9000/modeExistant/";
+    const url_api = "https://gero-api.herokuapp.com/modeExistant/";
 
     //state des données reçues
     const [text, getText] = useState('');
