@@ -7,7 +7,7 @@ function APropos() {
 
 
     //backend 
-  const url_api = "http://localhost:9000/apropos/";
+  const url_api = "https://gero-api.herokuapp.com/apropos/";
 
   //state des données reçues
   const [text, getText] = useState('');
