@@ -3,7 +3,7 @@
 
 .slider{
   width:100%;
-  height: 100vh;
+  height: 95vh;
   max-height: 1306px;
   position: relative;
   overflow: hidden;
@@ -12,35 +12,35 @@
       position: absolute;
       right: 30%;
       bottom: 18%;
-      width:100px;
-      line-height:80px;
+      width: 100px;
+      line-height: 80px;
 
       h1{
-        font-size:70px; /*TBD*/
+        font-size:70px; 
         color: $white;
         text-shadow:0.5px 0.5px $shadowgrey;
       }    
   }
 
   .container-dots {
-      position: absolute;
-      bottom: 8%;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    bottom: 8%;
+    left: 50%;
+    transform: translateX(-50%);
 
-      .dot {
-          width: 15px;
-          height: 15px;
-          border-radius: 50%;
-          margin: 0 5px;
-          background: $white;
-        }
+    .dot {
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: $white;
+    }
 
-        .dot.active {
-          background: $orange;
-        }
-    } 
+    .dot.active {
+      background: $orange;
+    }
+  } 
 }
 
 .slide {
@@ -48,14 +48,10 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 95%;
+  height: 100%;
   opacity: 0;
-  transform: translateX(50%); //eto 
+  transform: translateX(50%); 
   transition: all .5s ease;
-
-  img{
-    height: 100%;
-  }
 }
 
 .current {
@@ -63,39 +59,6 @@
   transform: translateX(0);
 }
 
-//flèche
-.arrow{
-  visibility: hidden;
-  border: 2px solid $white;
-  border-radius: 50%;
-  background: transparent;
-  color : $white;
-  width: 2rem;
-  height: 2rem;
-  cursor: pointer;
-  position: absolute;
-  z-index: 999;
-  top: 50%;
-
-  &:hover{
-  background: $white;
-  color: $grey;
-  }
-}
-
-.next{
-  right: 1.5rem;
-}
-
-.prev{
-  left: 1.5rem;
-}
-
-.contenue {
-  position: absolute;
-  top: 23rem;
-  left: 5rem;
-}
 .slide img{
   width: 100%;
   height: 100%;
@@ -108,18 +71,16 @@
     transform: translateY(75px);
     height:35vh;
     .textslide{
-      width:100px;
       line-height:35px;
       h1{
-        font-size:35px; /*TBD*/
+        font-size: 32px; 
       }    
     }
     .container-dots {
-      left: 50%;
+      bottom: 4%;
       .dot {
           width: 12px;
           height: 12px;
-          margin: 0 5px;
         }
     } 
   }
@@ -130,14 +91,13 @@
     transform: translateY(55px);
     height:55vh;
     .textslide{
-      width:100px;
       line-height:60px;
       h1{
-        font-size:55px; /*TBD*/
+        font-size: 60px; 
       }    
     }
     .container-dots {
-      left: 50%;
+      bottom: 5%;
     } 
   }
 }
@@ -148,17 +108,13 @@
     transform: translateY(50px);
     height:50vh;
     .textslide{
-      right: 230px;
-      bottom: 90px;
-      width:100px;
       line-height:60px;
       h1{
-        font-size:55px; /*TBD*/
+        font-size:55px; 
       }    
     }
     .container-dots {
-      bottom: 40px;
-      left: 50%;
+      bottom: 5%;
     } 
   }
 }
@@ -168,11 +124,9 @@
 @include mediaXl{
   .slider{
     .textslide{
-      position: absolute;
-      width:100px;
       line-height:100px;
       h1{
-        font-size:100px; /*TBD*/     
+        font-size:100px;  
       }    
     }
     .container-dots{
@@ -186,14 +140,10 @@
 
 @include mediaXxl{
   .slider{
-    width:100%;
-    //height: $navSliderXxl;
     .textslide{
-      position: absolute;
-      width:100px;
       line-height:185px;
       h1{
-        font-size:150px; /*TBD*/
+        font-size:150px; 
       }    
     }
     .container-dots{
@@ -204,9 +154,3 @@
     }
   }
 }
-
-
-
-
-
-
