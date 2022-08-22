@@ -2,10 +2,10 @@
 @import 'Variables.scss';
 
 .header{
-  position:absolute;
   position:fixed;
   width:100%;
   z-index:999;
+  height: 75px;
 
   .nav{   
     display:flex;
@@ -20,11 +20,10 @@
     transition: .3s ease padding;
 
     .logo{
-        padding-top:10px;
-        img{
-            height:100%;
-            width:130px;
-        }
+        display: flex;
+        align-items: center;
+        vertical-align: middle;
+
         &:hover{
           cursor:pointer;
         }
@@ -34,31 +33,27 @@
     .navcont{
         display:flex;
         list-style: none;
-        width:53%; //largeur et impact sur l'espace entre les liens 
+        width:55%; 
         justify-content: space-between;
         
         //un lien 
         .items{
             font-size:14px;
             text-decoration: none;
-            height: 50%;
+            //height: 50%;
             transition: 1s ease text-decoration;
 
             &.active{
-              color: $orange;
-
-              //border-bottom: 1.5px solid $orange;
+              border-bottom: 1.5px solid $orange;
             }
           
             &:hover{
               cursor: pointer;
               color: $orange;
-              //border-bottom: 1.5px solid $orange;
             }  
         }  
         .active{
-          color: $orange;
-          //border-bottom: 1.5px solid $orange;
+          border-bottom: 1.5px solid $orange;
         }
         .fill{
           display:none;
@@ -68,9 +63,8 @@
     .navbar_burger{
       width: 14px;
       height: 40px;
-      background: transparent;
       border: none;
-      color: inherit;
+      background: transparent;
     }
 
     .compte{
@@ -87,7 +81,7 @@
         .btn-login{
           background:none;
           border:none;
-          font-size: 13px !important;
+          font-size: 13px;
           color:$black;
 
           &:hover{
@@ -112,7 +106,7 @@
   bottom: 10px;
   right: 10px;
   opacity:0.8;
-  z-index:9999;
+  z-index:99;
 
   &:hover{
     opacity:1;
@@ -125,20 +119,14 @@
 @include mediaXs{
   .header{
     .nav{
-      box-shadow:0px 1px 5px $grey;
-
       .logo{
-        transform:scale(0.8);
-        transform: translateY(45px);
-        padding:3px 0px !important; //VARIABLE
+        transform: translateY(35px);
         background: $white;
         width:100%;
-        display:flex;
         box-shadow:0px 1px 5px $grey;
 
-        //image logo
         .geroba{
-          transform:scale(0.7); //VARIABLE
+          transform:scale(0.7); 
         }
 
         //bouton qui affiche les liens
@@ -158,29 +146,24 @@
         flex-direction: column;
         position: fixed;
         right: -100vw;
-        width:55% !important;
-        top: 102px;
+        top: 99px;
         padding-top:7px;
         height: 35vh;
         visibility: hidden;
         background-color: $white;
         transition: all .8s ease-out;
+        width:55%;
+        box-shadow:0px 1px 1px $grey;
 
         li{
-          margin:0 !important;
           width: 100%;
 
-          .items{ //les liens 
+          .items{ 
             height: 100%;
             padding: 9px 70% 9px 25%;
-
             &.active {
-              text-decoration:none;
               color: $white; 
               background:$orange;
-            }
-            &:hover{
-              text-decoration:none;
             }
           }
         }
@@ -188,18 +171,17 @@
 
       //Linkedin & Se connecter 
       .compte{
-        color: $white;
-        background: $orange;
-        position:fixed;
-        padding:12px 0px; //VARIABLE 
-        top:0;
-        width:100%;
-
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
-        
-        
+        align-items: center;
+        position:fixed;
+        top:0;
+        height: 45px;
+        color: $white;
+        background: $orange;
+        width:100%;
+
         //linkedin
         a, .btn-login{
           margin-right: 20px;
@@ -220,7 +202,6 @@
     }
 
     .show-nav .navcont{
-      width: 100vw;
       right: 0;
       visibility: visible;
     }
@@ -270,22 +251,16 @@
 
 
 
-//Tablette iPad Mini : ajout icon!!! 
+//Tablette iPad Mini 
 @include mediaSm{
   .header{
     .nav{
-      width:100%;
-     
       .logo{
-        transform:scale(0.8);
-        transform: translateY(47px);
-        padding:3px 0px !important; 
+        transform: translateY(40px);
         background: $white;
         width:100%;
-        display:flex;
         box-shadow:0px 1px 5px $grey;
 
-        //image logo
         .geroba{
           transform:scale(0.7);
         }
@@ -307,17 +282,17 @@
         flex-direction: column;
         position: fixed;
         right: -100vw;
-        width:50% !important; 
-        top: 104px;
-        padding:10px 0px;
+        width: 50%; 
+        top: 102px;
         height: 35vh;
+        padding: 14px 0;
         visibility: hidden;
         background-color: $white;
         transition: all .8s ease-out;
 
         
         li{
-          margin:0 !important;
+          //margin:0 !important;
 
           .items{ //les liens 
             height: 100%;
@@ -325,12 +300,8 @@
             padding: 14px 70% 14px 25%;
 
             &.active {
-              text-decoration:none;
               color: $white; 
               background:$orange;
-            }
-            &:hover{
-              text-decoration:none;
             }
           }
         }
@@ -338,18 +309,16 @@
 
       //Linkedin & Se connecter 
       .compte{
-        color: $white;
-        background: $orange;
-        position:fixed;
-        padding:12px 0px; //VARIABLE 
-        top:0;
-        width:100%;
-
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
-        
-        
+        align-items: center;
+        color: $white;
+        background: $orange;
+        position:fixed;
+        top:0;
+        height: 50px;
+        width:100%;     
         //linkedin
         a, .btn-login{
           margin-right: 20px;
@@ -365,7 +334,6 @@
     }
 
     .show-nav .navcont{
-      width: 100vw;
       right: 0;
       visibility: visible;
     }
@@ -417,18 +385,12 @@
 @include mediaMd{
   .header{
     .nav{
-      width:100%;
-
       .logo{
-        transform:scale(0.8);
-        transform: translateY(47px);
-        padding:3px 0px !important; //VARIABLE
+        transform: translateY(40px);
         background: $white;
         width:100%;
-        display:flex;
         box-shadow:0px 1px 5px $grey;
 
-        //image logo
         .geroba{
           transform:scale(0.7); //VARIABLE
         }
@@ -450,7 +412,7 @@
         flex-direction: column;
         position: fixed;
         right: -100vw;
-        width:50% !important; //Variable
+        width:50%; //Variable
         top: 104px;
         height: 35vh;
         padding: 14px 0;
@@ -460,20 +422,13 @@
 
         
         li{
-          margin:0 !important;
-
           .items{ //les liens 
             height: 100%;
-            width: 100%;
             padding: 15px 70% 15px 25%;
 
             &.active {
-              text-decoration:none;
               color: $white; 
               background:$orange;
-            }
-            &:hover{
-              text-decoration:none;
             }
           }
         }
@@ -481,17 +436,17 @@
 
       //Linkedin & Se connecter 
       .compte{
-        color: $white;
-        background: $orange;
-        position:fixed;
-        padding:12px 0px; //VARIABLE 
-        top:0;
-        width:100%;
-
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
-          
+        align-items: center;
+        color: $white;
+        background: $orange;
+        position:fixed;
+        height: 50px;
+        top:0;
+        width:100%;
+    
         //linkedin
         a, .btn-login{
           margin-right: 20px;
@@ -508,7 +463,6 @@
     }
 
     .show-nav .navcont{
-      width: 100vw;
       right: 0;
       visibility: visible;
     }
@@ -570,13 +524,13 @@
       .compte{
         width:18%;
         .btn-login{
-          margin-right:20px; //VALEUR:marge: alternative? 
-          font-size:15.5px !important;
+          margin-right:20px;
+          font-size:15.5px;
         }
       }
       .linkedin{
         font-size:17px;
-        color: black;
+        color: $black;
       }
       .user{
         font-size:17px;
@@ -586,7 +540,6 @@
 }
 
 
-//Ecran extra-large
 @include mediaXxl{
   .header{
     .nav{
@@ -604,15 +557,15 @@
         width:10%;
         .btn-login{
           margin-right:20px; 
-          font-size: 28px !important;
+          font-size: 28px;
         }
       }
       .linkedin{
         font-size:30px;
-        color: black;
+        color: $black;
       }
       .user{
-        font-size:28px;
+        font-size: 28px;
       }
     }
   }
