@@ -44,7 +44,7 @@ const SectionText = (props) => {
   }
 
   //backend 
-  const url_api = "http://localhost:9000/accueil/";
+  const url_api = "https://gero-api.herokuapp.com/accueil/";
 
   //state des données reçues
   const [text, getText] = useState('');
