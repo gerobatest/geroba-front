@@ -49,7 +49,7 @@ function SectionDemo() {
     ]
   };
 
-  const url_api = "https/gero-api.herokuapp.com/demo/";
+  const url_api = "https://gero-api.herokuapp.com/demo/";
 
     //notes sera l'état des donées reçues depuis la base de donnée
     const [notes, getNotes] = useState('');
