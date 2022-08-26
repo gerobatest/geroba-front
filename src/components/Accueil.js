@@ -44,7 +44,7 @@ const SectionText = (props) => {
   }
 
   //backend 
-  const url_api = "https://gero-api.herokuapp.com/accueil/";
+  const url_api = "https://gero-api.herokuapp/accueil/";
 
   //state des données reçues
   const [text, getText] = useState('');
@@ -118,6 +118,7 @@ const SectionText = (props) => {
                 Solution de mobilité
               </h1>
 
+              {/* Les textes depuis la base de données*/}
               <GetAccueil text={text}/>
 
             </div>

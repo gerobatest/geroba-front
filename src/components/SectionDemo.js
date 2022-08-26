@@ -49,7 +49,7 @@ function SectionDemo() {
     ]
   };
 
-  const url_api = "https://gero-api.herokuapp.com/demo/";
+  const url_api = "https://gero-api.herokuapp/demo/";
 
     //notes sera l'état des donées reçues depuis la base de donnée
     const [notes, getNotes] = useState('');
@@ -81,10 +81,10 @@ function SectionDemo() {
           {/* Video demonstration */}
           <div className="video-container" id="test">
 
-            {/* Si la vidéo est enregistrée localement 
+            {/* Si la vidéo est enregistrée localement */}
             <video className="videoDemo" width="640" height="264" controls
               src="/GerobaDemo.mp4" type="video/mp4">
-            </video>*/}
+            </video>
 
 
             {/* Si la vidéo est en ligne 

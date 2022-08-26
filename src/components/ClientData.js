@@ -6,7 +6,7 @@ const ClientData = [
     id: uuidv4(),
     title: "Le Port",
     imgPath: "/Le-Port.avif",
-    style: " 20%"
+    style: "20%"
   },
   {
     id: uuidv4(),

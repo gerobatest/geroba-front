@@ -17,7 +17,7 @@ function SectionFonc(props) {
     const Existant  = ({ content,limit}) => {
 
     //backend 
-    const url_api = "https://gero-api.herokuapp.com/modeExistant/";
+    const url_api = "https://gero-api.herokuapp/modeExistant/";
 
     //state des données reçues
     const [text, getText] = useState('');
@@ -88,7 +88,7 @@ function SectionFonc(props) {
   const Etude = ({ content,limit}) => {
 
     //backend 
-    const url_api = "https://gero-api.herokuapp.com/modeEtude/";
+    const url_api = "https://gero-api.herokuapp/modeEtude/";
 
     //state des données reçues
     const [text, getText] = useState('');
@@ -154,7 +154,7 @@ function SectionFonc(props) {
   const Depots = ({ content,limit}) => {
      
     //backend 
-    const url_api = "https://gero-api.herokuapp.com/modeStocks/";
+    const url_api = "https://gero-api.herokuapp/modeStocks/";
 
     //state des données reçues
     const [text, getText] = useState('');
@@ -218,7 +218,7 @@ function SectionFonc(props) {
   const Travaux = ({ content,limit}) => {
 
     //backend 
-    const url_api = "https://gero-api.herokuapp.com/modeTravaux/";
+    const url_api = "https://gero-api.herokuapp/modeTravaux/";
 
     //state des données reçues
     const [text, getText] = useState('');
@@ -282,7 +282,7 @@ function SectionFonc(props) {
   const Gestion = ({ content,limit}) => {
 
     //backend 
-    const url_api = "https://gero-api.herokuapp.com/modeGestion/";
+    const url_api = "https://gero-api.herokuapp/modeGestion/";
 
     //state des données reçues
     const [text, getText] = useState('');
