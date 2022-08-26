@@ -49,7 +49,7 @@ function SectionDemo() {
     ]
   };
 
-  const url_api = "https://gero-api.herokuapp.com/demo/";
+  const url_api = "http://localhost:9000/demo/";
 
     //notes sera l'état des donées reçues depuis la base de donnée
     const [notes, getNotes] = useState('');
@@ -77,37 +77,22 @@ function SectionDemo() {
           </h1>
 
           < GetDemo notes={notes}/>
-
-          {/* <div className="sm-container">
-            <p className="sm-paragraph">
-                First line. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
-                totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta 
-                sunt explicabo.Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia 
-                consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est.      
-            </p>
-            <p className="sm-paragraph">
-                Second line. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
-                totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta 
-                sunt explicabo.Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia 
-                consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est. 
-            </p> 
-          </div> */}
           
           {/* Video demonstration */}
           <div className="video-container" id="test">
 
-            {/* Si la vidéo est enregistrée localement */}
+            {/* Si la vidéo est enregistrée localement 
             <video className="videoDemo" width="640" height="264" controls
               src="/GerobaDemo.mp4" type="video/mp4">
-            </video>
+            </video>*/}
 
 
             {/* Si la vidéo est en ligne 
-            <iframe 
-              src="https://www.youtube.com/embed/avBbvVwLMnY"
+            <iframe width="640" height="264"
+              src="https://www.youtube.com/embed/avBbvVwLMnY?autoplay=1"
               className="videoDemo"
               title="Geroba demonstration"
-            />   */}
+            />  */} 
 
           </div>
           
@@ -117,8 +102,8 @@ function SectionDemo() {
             <Slider {...settings}>
               {ClientData.map((item, index) => (
               <div key="item" className="card"> 
-                
-                <img className="clientLogo" style={{top: item.style}} id={index} src={item.imgPath} alt={item.title} title={item.title}/>
+                <img className="clientLogo" id={index} src={item.imgPath} alt={item.title} title={item.title}/>
+                {/* <img className="clientLogo" style={{top: item.style}} id={index} src={item.imgPath} alt={item.title} title={item.title}/> */}
               </div>
               ))}
             </Slider>     

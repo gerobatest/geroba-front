@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import parse from 'html-react-parser';
 
 export default function GetModeTravaux(props) {
 
@@ -15,10 +16,10 @@ export default function GetModeTravaux(props) {
                     return(
                         <div className="sm-container" key={text}>
                             <p className="sm-paragraph">
-                                {text.para1}   
+                                {parse(text.para1)}   
                             </p>
                             <p className="sm-paragraph">
-                                {text.para2}
+                                {parse(text.para2)}
                             </p> 
                         </div>
                     )

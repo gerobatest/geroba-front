@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import parse from 'html-react-parser';
 
 //Cette fonction extrait les données a mettre sur la page
 export default function GetDemo(props){
@@ -14,10 +15,10 @@ export default function GetDemo(props){
                     return(
                         <div className="sm-container" key={index}>
                             <p className="sm-paragraph">
-                                {note.para1}
+                                {parse(note.para1)}
                             </p>
                             <p className="sm-paragraph">
-                                {note.para2}
+                                {parse(note.para2)}
                             </p>
                         </div> 
                     )

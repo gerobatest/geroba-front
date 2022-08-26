@@ -7,10 +7,9 @@ import { HiOutlineX } from "react-icons/hi";
 import axios from 'axios';
 import GetModeExistant from "./get/GetModeExistant";
 import GetModeEtude from "./get/GetModeEtude";
-import GetModeDepot from "./get/GetModeDepot";
+import GetModeStocks from "./get/GetModeStocks";
 import GetModeTravaux from "./get/GetModeTravaux";
 import GetModeGestion from "./get/GetModeGestion";
-import GetModeRoute from "./get/GetModeRoute";
 
 function SectionFonc(props) {
 
@@ -18,7 +17,7 @@ function SectionFonc(props) {
     const Existant  = ({ content,limit}) => {
 
     //backend 
-    const url_api = "https://gero-api.herokuapp.com/modeExistant/";
+    const url_api = "http://localhost:9000/modeExistant/";
 
     //state des données reçues
     const [text, getText] = useState('');
@@ -69,7 +68,7 @@ function SectionFonc(props) {
                             <div className="PopUp">
                                 <img src="/etape-1.jpg" alt="Mode existant"/>
                                 <h1 className="title">Etape 1</h1>
-                                <p className="lightTitle">Mode Existant</p>
+                                <p className="lightTitle">Statut Existant</p>
 
                                 <GetModeExistant text={text}/>
 
@@ -137,7 +136,7 @@ function SectionFonc(props) {
                   <div className="PopUp">
                       <img src="/etape-2.jpg" alt="Mode existant"/>
                       <h1 className="title">Etape 2</h1>
-                      <p className="lightTitle">Mode Etude</p>
+                      <p className="lightTitle">Statut Etude</p>
 
                       <GetModeEtude text={text}/>
 
@@ -155,7 +154,7 @@ function SectionFonc(props) {
   const Depots = ({ content,limit}) => {
      
     //backend 
-    const url_api = "http://localhost:9000/modeDepot/";
+    const url_api = "http://localhost:9000/modeStocks/";
 
     //state des données reçues
     const [text, getText] = useState('');
@@ -202,9 +201,9 @@ function SectionFonc(props) {
                   <div className="PopUp">
                       <img src="/etape-3.jpg" alt="Mode existant"/>
                       <h1 className="title">Etape 3</h1>
-                      <p className="lightTitle">Mode Dépôts</p>
+                      <p className="lightTitle">Statut Stocks</p>
                       
-                      <GetModeDepot text={text}/>
+                      <GetModeStocks text={text}/>
 
                       <button className="close-modal" onClick={toggleModal}>
                         <HiOutlineX />
@@ -266,7 +265,7 @@ function SectionFonc(props) {
                     <div className="PopUp">
                         <img src="/etape-4.jpg" alt="Mode existant"/>
                         <h1 className="title">Etape 4</h1>
-                        <p className="lightTitle">Mode Travaux</p>
+                        <p className="lightTitle">Statut Travaux</p>
 
                         <GetModeTravaux text={text}/>
 
@@ -333,7 +332,7 @@ function SectionFonc(props) {
                   <div className="PopUp">
                       <img src="/etape-5.jpg" alt="Mode existant"/>
                       <h1 className="title">Etape 5</h1>
-                      <p className="lightTitle">Mode Gestion</p>
+                      <p className="lightTitle">Statut Gestion</p>
 
                       <GetModeGestion text={text}/>
 
@@ -357,14 +356,14 @@ function SectionFonc(props) {
                 </div>
                 <div className="sectionText">
                     <h1 className="title" >
-                        {props.title}
+                      Fonctions
                     </h1>
                     <p className="paragraph">
-                        La solution permet de gérer les équipements dans
-                        ses différentes étapes de vie : l'Existant, les Etudes,
-                        les Dépôts, les Travaux de remplacement, la Gestion
-                        du patrimoine dans le temps et les thématiques
-                        Routes / Bâtiments.
+                      La solution permet de gérer les équipements dans ses différentes étapes de vie
+                      pour les différentes thématiques des domaines routiers et (demain) bâtiments.
+                      Il est possible d’activer plusieurs statuts et ainsi, de pouvoir comparer des
+                      données à des moments différents ; par exemple, un objet dans son état actuel
+                      (Existant), sa demande de réparation (Gestion) et son projet de modification (Etude).
                     </p>
 
                     <ol>
@@ -372,11 +371,8 @@ function SectionFonc(props) {
                             <div className='modeLong'>
                               <b>Statut « Existant » :</b>
                               {/* La texte à limiter montrer dans la partie visible*/}
-                              <Existant content="C'est ce qui existe sur le terrain, l'état « 0 ». 
-                              La solution permet de gérer les équipements dans ses différentes 
-                              étapes de vie : l'Existant, les Etudes,les Dépôts, les Travaux de 
-                              remplacement, la Gestion du patrimoine dans le temps et les thématiquesRoutes / Bâtiments. " 
-                              limit={125}/>
+                              <Existant content="C'est ce qui existe sur le terrain, l'état « 0 »." 
+                              limit={48}/>
                             </div>  
                         </li>
                         <li>
@@ -384,8 +380,8 @@ function SectionFonc(props) {
                             <div className='modeLong'>
                             <Etude content=" Il s'agit du fruit de l'expertise
                             de l'existant et la définition de ce qu'il devrait y
-                            avoir" 
-                            limit={90}/>
+                            avoir " 
+                            limit={95}/>
                             </div> 
                         </li>
                         <li>

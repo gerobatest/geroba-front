@@ -1,4 +1,5 @@
 import React from 'react'
+import parse from 'html-react-parser';
 
 export default function GetAccueil(props) {
 
@@ -15,16 +16,22 @@ export default function GetAccueil(props) {
                     return(
                         <div key={text}>
                             <p className="paragraph">
-                                {text.para1}
+                                {parse(text.para1)}
                             </p>
                             <p className="paragraph">
-                                {text.para2}
+                                {parse(text.para2)}
                             </p>
                             <p className="paragraph">
-                                {text.para3}
+                                {parse(text.para3)}
                             </p>
                             <p className="paragraph">
-                                {text.para4}
+                                {parse(text.para4)}
+                            </p>
+                            <p className="paragraph">
+                                {parse(text.para5)}
+                            </p>
+                            <p className="paragraph">
+                                {parse(text.para6)}
                             </p>
                         </div> 
                     )

@@ -1,7 +1,7 @@
 import React from 'react';
 import parse from 'html-react-parser';
 
-export default function GetModeEtude(props) {
+export default function GetModeStocks(props) {
 
         const displayText = (props) =>{
         

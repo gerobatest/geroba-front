@@ -1,7 +1,7 @@
 import React from 'react';
 import parse from 'html-react-parser';
 
-export default function GetAPropos(props) {
+export default function GetFonctions(props) {
 
     const displayText = (props) =>{
         
@@ -29,9 +29,6 @@ export default function GetAPropos(props) {
                             </p>
                             <p className="paragraph">
                                 {parse(text.para6)}
-                            </p>
-                            <p className="paragraph">
-                                {parse(text.para7)}
                             </p>
                         </div> 
                     )

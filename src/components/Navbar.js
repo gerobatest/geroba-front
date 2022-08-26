@@ -67,11 +67,11 @@ const Navbar = () => {
                         </li>
 
                         <li>
-                            <Link className='items' activeClass='active' to="téléchargement" spy={true} smooth={true} duration={1000} offset={-85}>TÉLÉCHARGEMENT</Link> 
+                            <Link className='items' activeClass='active' to="téléchargement" spy={true} smooth={true} duration={1000} offset={-80}>TÉLÉCHARGEMENT</Link> 
                         </li>
 
                             <li>
-                            <Link className='items' activeClass='active' to="demo" spy={true} smooth={true} duration={1000} offset={-55}>DÉMO</Link>
+                            <Link className='items' activeClass='active' to="demo" spy={true} smooth={true} duration={1000} offset={-85}>DÉMO</Link>
                         </li> 
 
                         <li>
