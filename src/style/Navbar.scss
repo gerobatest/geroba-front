@@ -49,7 +49,7 @@
           
             &:hover{
               cursor: pointer;
-              color: $orange;
+              border-bottom: 1.5px solid $orange;
             }  
         }  
         .active{

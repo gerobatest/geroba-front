@@ -12,6 +12,7 @@
     }
 }
 
+
 //Flèches personalisées 
 .slick-next {
     background: url('../images/right-arrow.svg') center center no-repeat!important;
@@ -37,18 +38,31 @@
     width:90%;
     height: 145px;
 
+    //background: yellow;
+    
+
     .card{
         padding:10px 0px;
-        //margin: auto 20px;
         margin: 0 auto;
         height: 145px;
 
+        position: relative;
+        justify-content: center;
+
         .clientLogo{ //fit the image 
             display: block;
-            position:relative;
             margin: 0 auto; //ajout
+
+
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
         }
     } 
+
+    .card:nth-of-type(2n){
+        background: green;
+    }
 }
  
 
