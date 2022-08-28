@@ -15,6 +15,15 @@ export default function GetFonctions(props) {
                             <p className="paragraph">
                                 {parse(text.para1)}
                             </p>
+                            <ol>
+                                <li>
+                                    
+                                </li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ol>
                             <p className="paragraph">
                                 {parse(text.para2)}
                             </p>

@@ -55,17 +55,19 @@ function setMargin (newMargin){
 }
 
 
-  const [center, setCenter] = useState([1.25364, 44.41486]); //le centre de la carte après chargement
-  const [zoom, setZoom] = useState(18)
+  const [center, setCenter] = useState([1.25364, 44.41480]); //le centre de la carte après chargement
+  const [zoom, setZoom] = useState(18.5)
   const [showLayer2, setShowLayer2] = useState(true);
   const [showCancelButton, setShowCancelButton] = useState(false); //Bouton annuler
   const [showSendButton, setShowSendButton] = useState(false);  //Bouton envoyer 
 
   const [modal, setModal] = useState(false);
+
   const toggleModal = (event) => {
       event.preventDefault();
       setModal(!modal);
   };
+  
   if(modal) {
     document.body.classList.add('active-modal')
   } else {

@@ -17,9 +17,6 @@ export default function GetDemo(props){
                             <p className="sm-paragraph">
                                 {parse(note.para1)}
                             </p>
-                            <p className="sm-paragraph">
-                                {parse(note.para2)}
-                            </p>
                         </div> 
                     )
                 })

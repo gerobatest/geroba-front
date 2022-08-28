@@ -1,7 +1,6 @@
 import React, {useEffect, useState}  from 'react'
-import ClientData from "./ClientData";
+import ClientData from "./data/ClientData";
 import Slider from "react-slick";
-import '../style/Commun.scss';
 import '../style/SectionDemo.scss';
 import '../style/VideoDemo.scss';
 import "../style/Clients.scss";
@@ -26,30 +25,24 @@ function SectionDemo() {
         breakpoint: 1281,
         settings: {
           slidesToShow: 5,
-          slidesToScroll: 1,
-          infinite: true
         }
       },
       {
         breakpoint: 993,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 1,
-          infinite: true
         }
       },
       {
         breakpoint: 577,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1,
-          infinite: true
         }
       }
     ]
   };
 
-  const url_api = "https://gero-api.herokuapp/demo/";
+  const url_api = "https://gero-api.herokuapp.com/demo/";
 
     //notes sera l'état des donées reçues depuis la base de donnée
     const [notes, getNotes] = useState('');
