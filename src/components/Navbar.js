@@ -70,8 +70,11 @@ const Navbar = () => {
                             <Link className='items' activeClass='active' to="téléchargement" spy={true} smooth={true} duration={1000} offset={-80}>TÉLÉCHARGEMENT</Link> 
                         </li>
 
-                            <li>
+                        <li>
                             <Link className='items' activeClass='active' to="demo" spy={true} smooth={true} duration={1000} offset={-85}>DÉMO</Link>
+                        </li> 
+                        <li>
+                            <Link className='items' activeClass='active' to="tarification" spy={true} smooth={true} duration={1000} offset={-85}>TARIFICATION</Link>
                         </li> 
 
                         <li>

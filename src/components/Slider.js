@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react';
 import {AiOutlineArrowLeft, AiOutlineArrowRight} from "react-icons/ai";
-import {sliderData} from "./data-slider";
+import {sliderData} from "./data/dataSlider";
 import '../style/Slider.scss';
 
 function Slider() {
@@ -43,29 +43,17 @@ function Slider() {
 
   return (
     <div className='slider'>
-      
-        <AiOutlineArrowLeft className = "arrow prev"
-            onClick={prevSlide}
-        />
-        <AiOutlineArrowRight className = "arrow next" 
-            onClick={nextSlide}
-        />
 
         {sliderData.map((slide, index) =>{
             return(     
                 <div className={index === currentSlide ?
-                  "slide current" : "slide"} key = {index}>
-                    
-                      {index === currentSlide && (
-                          <>
-                              <img src={slide.image} alt="slide"/>
-                              <div className='contenue'>
-                                  <h2>{slide.heading}</h2>
-                                  <p>{slide.desc}</p>
-                              </div>
-                          </>          
-                      )}
-                  </div>         
+                    "slide current" : "slide"} key = {index}>
+                        {index === currentSlide && (
+                            <>
+                                <img src={slide.image} alt="slide"/>
+                            </>          
+                        )}
+                  </div>          
              ) 
         })}
 
@@ -75,12 +63,12 @@ function Slider() {
             <h1> BÂTIMENTS</h1>
         </div>
         
-        <div className='container-dots' /*point slide*/> 
-            {Array.from({length: 3}).map((item, index,) => (
-                <div key={index}
-                onClick={() => moveDot(index + 0)}
-                className={currentSlide === index + 0? "dot active" : "dot"}></div>
-            ))}
+        <div className='container-dots'> 
+                {Array.from({length: 3}).map((item, index,) => (
+                    <div key={index}
+                    onClick={() => moveDot(index + 0)}
+                    className={currentSlide === index + 0? "dot active" : "dot"}></div>
+                ))}
         </div>
     </div>   
   )

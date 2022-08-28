@@ -371,17 +371,27 @@ function SectionFonc(props) {
                             <div className='modeLong'>
                               <b>Statut « Existant » :</b>
                               {/* La texte à limiter montrer dans la partie visible*/}
-                              <Existant content="C'est ce qui existe sur le terrain, l'état « 0 »." 
-                              limit={48}/>
+                              <Existant content="C'est ce qui existe sur le terrain, l'état « 0 ».
+                                Il est mis en place soit grâce à des données existantes au sein de 
+                                la collectivité (par exemple des données Sig au format « .shp » 
+                                importables ; il peut également être réalisé au travers d’un 
+                                relevé traditionnel pédestre grâce à la solution mobile de 
+                                l’application ; enfin, il peut être réalisé en tout ou partie, 
+                                à l’aide d’un relevé images terrain (différentes solutions possibles, 
+                                dont du 360°) et une exploitation de type IA (Intelligence Artificielle)." 
+                                limit={125}/>
                             </div>  
                         </li>
                         <li>
                             <b>Statut « Etude » :</b> 
                             <div className='modeLong'>
                             <Etude content=" Il s'agit du fruit de l'expertise
-                            de l'existant et la définition de ce qu'il devrait y
-                            avoir " 
-                            limit={95}/>
+                              de l'existant et la définition de ce qu'il devrait y
+                              avoir. Les études sont réalisés avec les outils 
+                              techniques dont dispose l’opérateur. Elles sont 
+                              ensuite intégrées dans l’application soit en affectant 
+                              les spécifications à des points existants,  " 
+                            limit={125}/>
                             </div> 
                         </li>
                         <li>
@@ -409,12 +419,12 @@ function SectionFonc(props) {
                         <li>
                             <b>Statut « Gestion » :</b> 
                             <div>
-                              <Gestion content=" Le patrimoine doit être
+                              <Gestion content="Le patrimoine doit être
                               surveillé à la fois sur le plan physique et
                               fonctionnel. Des actions de surveillances sont
                               définies sur tout ou une partie du patrimoine et
                               les éventuels besoins d'intervention identifiés
-                              puis suivis. balabalab"
+                              puis suivis."
                               limit={125}/>
                             </div>
                         </li>
