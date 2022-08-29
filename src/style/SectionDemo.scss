@@ -1,42 +1,30 @@
 @import "Variables.scss";
 
-#demo{
-    
-    margin-top: $paddingSectionLg !important;
-    .titleDemo{
-        padding-left:3%; //Démo
-    }
+#demo{ 
+    margin-top: $paddingSectionLg; //important 
 }
 
+.titleDemo{
+    padding-left:3%; //Démo
+}
 
-//Section téléchargement + Démo + PopUp
+//Section téléchargement + Démo + Pop Up
 .sm-container{
     display:flex;
     margin:auto;
     .sm-paragraph{
-        color: $grey;
-        //text-align:justify;
         line-height: $lineheightLg; 
         width:50%;
         box-sizing:border-box;
+         padding: 0 3% 3% 3%; 
     }
-    //Premier element
-    p.sm-paragraph:nth-child(odd) {
-        padding:3%; 
-    }
-    //second element
-    p.sm-paragraph:nth-child(even) {
-        padding:3%; 
-    }  
 }
 
-//Responsive 
-//Ecran mobile
 @include mediaXs{
     #demo{
         padding: 0 8px;
         .title{
-            padding:0 !important; //Démo 
+            padding:0; //Démo 
         }
         .sm-container{
             display:block;

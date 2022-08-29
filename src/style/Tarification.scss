@@ -1,0 +1,40 @@
+@import 'Commun.scss';
+@import 'Variables.scss';
+
+#tarification{
+    margin-top: $paddingSectionLg; 
+}
+
+
+//Responsive 
+//Ecran mobile
+@include mediaXs{
+    #tarification{
+        padding: 0 8px;
+        .title{
+            padding:0 !important; //Démo 
+        }
+        .sm-container{
+            display:block;
+
+            .sm-paragraph{
+                width:100%;
+                padding:0; 
+                line-height: $lineheightSm; 
+            }
+            //second element
+            .sm-paragraph:nth-child(even) {
+                margin-top:20px; 
+            } 
+        }
+    }   
+}
+
+//Ecran iPad Mini
+@include mediaSm{
+.sm-container{
+    .sm-paragraph{
+        line-height: $lineheightSm; 
+        } 
+    }
+}

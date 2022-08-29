@@ -10,6 +10,10 @@ body{
     font-family: $Segoe;
 }
 
+.title-container{
+    width: 100%;
+}
+
 .title{
     color: $orange;
     font-size: $titleLg; /*TBD*/
@@ -24,7 +28,7 @@ body{
     margin-bottom: 20px;
 }
 
-p{
+p, li{
     font-size: $fontsizeLg;;
     color: $grey;
     line-height: 20pt; /*TBD*/
@@ -36,7 +40,7 @@ p{
         font-size: $titleSm;
         text-align:center;
     } 
-    p{ 
+    p, li{ 
         font-size: $fontsizeSm;
         line-height: $lineheightSm;
     }
@@ -48,7 +52,7 @@ p{
     .title{
         font-size: $titleSm;
     } 
-    p{
+    p, li{
         font-size: $fontsizeSm;
     }
 }   
@@ -59,7 +63,7 @@ p{
     .title{
         font-size: $titleMd;
     }
-    p{
+    p, li{
         font-size: $fontsizeMd;
     }
 }  
@@ -70,7 +74,7 @@ p{
     .title{
         font-size: $titleXl;
     } 
-    p{
+    p, li{
         font-size: $fontsizeXl;
         line-height: $lineheightXl;
     }
@@ -81,7 +85,10 @@ p{
         width: 2560px;
         margin:0 auto;
     }
-    p{
+    .title{
+        font-size: $titleXxl;
+    }
+    p, li{
         font-size: $fontsizeXxl;
         line-height: $lineheightXxl;
     }
