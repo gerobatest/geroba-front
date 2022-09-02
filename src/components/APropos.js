@@ -2,19 +2,18 @@ import React, {useState, useEffect} from 'react'
 import { Parallax } from 'react-scroll-parallax';
 import GetApropos from "./get/GetApropos";
 import axios from 'axios';
+import {url_api} from '../conf/Config.js';
 
 function APropos() {
 
 
-    //backend 
-  const url_api = "https://gero-api.herokuapp.com/apropos/";
-
+  //backend 
   //state des données reçues
   const [text, getText] = useState('');
 
   //Extraire les données depuis l'api (serveur)
   const getAllText = () =>{
-    axios.get(`${url_api}`)
+    axios.get(`${url_api}/apropos/`)
     .then((response) => {
       const allText = response.data; //ce que nous reçevons de l'api
       getText(allText); //le state contient les données reçues depuis la base de donnée

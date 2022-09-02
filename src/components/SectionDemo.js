@@ -9,6 +9,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 import axios from 'axios';
 import  GetDemo from './get/GetDemo';
+import {url_api} from '../conf/Config.js';
 
 function SectionDemo() {
 
@@ -42,14 +43,13 @@ function SectionDemo() {
     ]
   };
 
-  const url_api = "https://gero-api.herokuapp.com/demo/";
 
     //notes sera l'état des donées reçues depuis la base de donnée
     const [notes, getNotes] = useState('');
 
     //Cette fonction extrait les données depuis la base de données en utilisant axios
     const getAllNotes = () => {
-        axios.get(`${url_api}`)
+        axios.get(`${url_api}/demo/`)
         .then((response) => {
             const allNotes = response.data; //les données reçu depuis l'api sont gardées ici
             getNotes(allNotes); //react state est mise à jour avec les données reçues

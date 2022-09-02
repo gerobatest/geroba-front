@@ -3,6 +3,7 @@ import Slider from './Slider';
 import '../style/Section.scss'; 
 import '../style/Slider.scss';
 import { Parallax } from 'react-scroll-parallax';
+import {url_api} from '../conf/Config.js';
 
 import GetAccueil from "./get/GetAccueil";
 import axios from 'axios';
@@ -10,14 +11,12 @@ import axios from 'axios';
 const SectionText = (props) => {
 
   //backend 
-  const url_api = "https://gero-api.herokuapp.com/accueil/";
-
   //state des données reçues
   const [text, getText] = useState('');
 
   //Extraire les données depuis l'api (serveur)
   const getAllText = () =>{
-    axios.get(`${url_api}`)
+    axios.get(`${url_api}/accueil/`)
     .then((response) => {
       const allText = response.data; //ce que nous reçevons de l'api
       getText(allText); //le state contient les données reçues depuis la base de donnée

@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
 import '../style/Footer.scss';
 import {AiTwotoneHome} from 'react-icons/ai';
-import {GiRotaryPhone, GiScales} from 'react-icons/gi'; 
-import { HiOutlineX } from "react-icons/hi";
+import {GiRotaryPhone} from 'react-icons/gi'; 
 import {MdEmail} from 'react-icons/md';
 import {FaGlobe} from 'react-icons/fa';
 import { useEffect } from "react";
@@ -62,11 +61,6 @@ function setMargin (newMargin){
   const [showSendButton, setShowSendButton] = useState(false);  //Bouton envoyer 
 
   const [modal, setModal] = useState(false);
-
-  const toggleModal = (event) => {
-      event.preventDefault();
-      setModal(!modal);
-  };
   
   if(modal) {
     document.body.classList.add('active-modal')
@@ -260,36 +254,6 @@ function setMargin (newMargin){
             </div>
           </div>
         </div>
-        {/* <div className='mention'>
-            <p onClick={toggleModal} className="openFonction"><GiScales />  <i>Les mentions légales-Politique de Sécurisation des Données</i></p>
-            <div>
-              {modal && (
-                 <div className='modalment'>
-                      <div onClick={toggleModal} className="overlay"></div>
-                          <div className='PopUp'>
-                          <h1 className="title">
-                          <img className='logoMent' src="/logo-geroba.avif" alt="Mode existant"/> Les mentions légales</h1>
-                          <p className="lightTitle">1. Définition des mentions légales</p>
-                          <div className="mentionContet">
-                            <p className='mentcont'>
-                            Les mentions légales désignent un ensemble d’informations que tout éditeur 
-                            de site internet est tenu de faire apparaitre à la connaissance des internautes. 
-                            C’est la loi n°2004-575 du 21 juin 2004 qui impose aux éditeurs cette obligation.
-                            </p>
-                            <p className='mentcont'>
-                            Les mentions légales regroupent des informations variées.
-                              Certaines sont relatives à l’identité de l’éditeur du site, d’autres à ses coordonnées et les 
-                              moyens d’entrer en contact avec le créateur du site, ou encore des informations relatives aux conditions 
-                              générales de vente ou aux conditions dans lesquelles les données personnelles de l’internaute peuvent être collectées.
-                            </p>
-                          </div>
-                          <button className="close-modal" onClick={toggleModal}>
-                            <HiOutlineX />
-                          </button>   
-                    </div>
-               </div>)}
-              </div> 
-          </div> */}
 
         <div className="footerRow2">
             <p><i>Conçu et développé par  &nbsp;&nbsp; <img className="footerLogo" src="gerobaFooter.jpg" alt="gds group"></img> &nbsp;&nbsp; Tous droits réservés &copy; {} {currentMonth} {currentYear}</i></p>

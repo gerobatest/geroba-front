@@ -10,6 +10,7 @@ import GetModeEtude from "./get/GetModeEtude";
 import GetModeStocks from "./get/GetModeStocks";
 import GetModeTravaux from "./get/GetModeTravaux";
 import GetModeGestion from "./get/GetModeGestion";
+import {url_api} from '../conf/Config.js';
 
 function SectionFonc(props) {
 
@@ -17,14 +18,12 @@ function SectionFonc(props) {
     const Existant  = ({ content,limit}) => {
 
     //backend 
-    const url_api = "https://gero-api.herokuapp.com/modeExistant/";
-
     //state des données reçues
     const [text, getText] = useState('');
 
     //Extraire les données depuis l'api (serveur)
     const getAllText = () =>{
-      axios.get(`${url_api}`)
+      axios.get(`${url_api}/modeExistant/`)
       .then((response) => {
         const allText = response.data; //ce que nous reçevons de l'api
         getText(allText); //le state contient les données reçues depuis la base de donnée
@@ -83,19 +82,16 @@ function SectionFonc(props) {
         )
   }
 
-
   //contenu du modal mode etude 
   const Etude = ({ content,limit}) => {
 
     //backend 
-    const url_api = "https://gero-api.herokuapp.com/modeEtude/";
-
     //state des données reçues
     const [text, getText] = useState('');
 
     //Extraire les données depuis l'api (serveur)
     const getAllText = () =>{
-      axios.get(`${url_api}`)
+      axios.get(`${url_api}/modeEtude/`)
       .then((response) => {
         const allText = response.data; //ce que nous reçevons de l'api
         getText(allText); //le state contient les données reçues depuis la base de donnée
@@ -149,19 +145,16 @@ function SectionFonc(props) {
     </div>
   }
 
-
   //contenu du modal mode depots 
   const Depots = ({ content,limit}) => {
      
     //backend 
-    const url_api = "https://gero-api.herokuapp.com/modeStocks/";
-
     //state des données reçues
     const [text, getText] = useState('');
 
     //Extraire les données depuis l'api (serveur)
     const getAllText = () =>{
-      axios.get(`${url_api}`)
+      axios.get(`${url_api}/modeStocks/`)
       .then((response) => {
         const allText = response.data; //ce que nous reçevons de l'api
         getText(allText); //le state contient les données reçues depuis la base de donnée
@@ -187,7 +180,7 @@ function SectionFonc(props) {
      } else {
        document.body.classList.remove('active-modal')
      }
-     //atreto
+
     if (content.length <= limit) {
       return <div>{content}</div>
     }
@@ -217,15 +210,12 @@ function SectionFonc(props) {
   //contenu du modal mode travaux
   const Travaux = ({ content,limit}) => {
 
-    //backend 
-    const url_api = "https://gero-api.herokuapp.com/modeTravaux/";
-
     //state des données reçues
     const [text, getText] = useState('');
 
     //Extraire les données depuis l'api (serveur)
     const getAllText = () =>{
-      axios.get(`${url_api}`)
+      axios.get(`${url_api}/modeTravaux/`)
       .then((response) => {
         const allText = response.data; //ce que nous reçevons de l'api
         getText(allText); //le state contient les données reçues depuis la base de donnée
@@ -281,15 +271,12 @@ function SectionFonc(props) {
   //contenu du modal mode gestion
   const Gestion = ({ content,limit}) => {
 
-    //backend 
-    const url_api = "https://gero-api.herokuapp.com/modeGestion/";
-
     //state des données reçues
     const [text, getText] = useState('');
 
     //Extraire les données depuis l'api (serveur)
     const getAllText = () =>{
-      axios.get(`${url_api}`)
+      axios.get(`${url_api}/modeGestion/`)
       .then((response) => {
         const allText = response.data; //ce que nous reçevons de l'api
         getText(allText); //le state contient les données reçues depuis la base de donnée
@@ -359,11 +346,11 @@ function SectionFonc(props) {
                       Fonctions
                     </h1>
                     <p className="paragraph">
-                      La solution permet de gérer les équipements dans ses différentes étapes de vie
-                      pour les différentes thématiques des domaines routiers et (demain) bâtiments.
-                      Il est possible d’activer plusieurs statuts et ainsi, de pouvoir comparer des
-                      données à des moments différents ; par exemple, un objet dans son état actuel
-                      (Existant), sa demande de réparation (Gestion) et son projet de modification (Etude).
+                        La solution permet de gérer les équipements dans ses différentes étapes de vie
+                        pour les différentes thématiques des domaines routiers et (demain) bâtiments.
+                        Il est possible d’activer plusieurs statuts et ainsi, de pouvoir comparer des
+                        données à des moments différents ; par exemple, un objet dans son état actuel
+                        (Existant), sa demande de réparation (Gestion) et son projet de modification (Etude).
                     </p>
 
                     <ol>
