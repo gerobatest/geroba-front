@@ -20,10 +20,10 @@ function App(){
               <Accueil/>
               <APropos/>
               <SectionFonc/>
+              <SectionTelechargement/>  
+              <SectionDemo/>  
+              <Tarification/>
             </ParallaxProvider>
-            <SectionTelechargement/>  
-            <SectionDemo/>  
-            <Tarification/>
           <Footer/>
           <Fill/>
           </div> 
