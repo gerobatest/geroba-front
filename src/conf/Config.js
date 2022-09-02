@@ -1,0 +1,1 @@
+export const url_api = "https://gero-api.herokuapp.com";
