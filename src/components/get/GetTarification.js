@@ -1,38 +1,37 @@
 import React from 'react';
 import parse from 'html-react-parser';
 
-export default function GetModeStocks(props) {
+export default function GetTarification(props) {
 
         const displayText = (props) =>{
         
-        const {text} = props; //text est un props
+        const {text} = props; 
 
         if(text.length > 0){
             return(
                 text.map((text) => {                   
                     //La partie qu'on veut montrer dans la page depuis la base de données
                     return(
-                        <div>
-                            <p className="paragraph">
+                        <div key={text}>
+                            <div className="paragraph">
                                 {parse(text.para1)}
-                            </p>
+                            </div>
 
-                            <p className="paragraph">
+                            <div className="paragraph">
                                 {parse(text.para2)}
-                            </p>
+                            </div>
 
-                            <p className="paragraph">
+                            <div className="paragraph">
                                 {parse(text.para3)}
-                            </p>
+                            </div>
 
-                            <p className="paragraph">
+                            <div className="paragraph">
                                 {parse(text.para4)}
-                            </p>
+                            </div>
 
-                            <p className="paragraph">
-                                
+                            <div className="paragraph">
                                 {parse(text.para5)}
-                            </p>
+                            </div>
                         </div>
                     )
                 })
