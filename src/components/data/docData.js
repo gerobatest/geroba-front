@@ -3,39 +3,39 @@ import { v4 as uuidv4 } from "uuid";
 const docData = [
     {
         id: uuidv4(),
-        image : '/cover.png', 
-        name: 'Présentation de la solution', 
-        document: 'geroba.ppt'  
+        image : '/cover_presentation.png', 
+        name: 'Présentation de la Solution', 
+        document: '/1-Presentation solution.pdf'  
     },
     {
         id: uuidv4(),
-        image : '/cover.png',  
-        name: 'Plaquette de présentation – Maître d\'ouvrage',
-        document: '/demo2.pdf'    
+        image : '/cover_maitrise_ouvrage.png',  
+        name: 'Plaquette – Maître d\'Ouvrage',
+        document: '/2-Plaquette - Maîtrise d\'Ouvrage.pdf'    
     },
     {
         id: uuidv4(),
-        image : '/cover.png',
+        image : '/cover_presentation_entreprise.png',
         name: 'Plaquette de présentation – Entreprise',
-        document: '/demo3.pdf'  
+        document: '/3-Plaquette - Entreprise.pdf'  
     },
     {
         id: uuidv4(),
-        image : '/cover.png',
-        name: 'Schéma - Principes Généraux',
-        document: '/demo4.pdf'  
+        image : '/cover_principes.png',
+        name: 'Principes Généraux',
+        document: '/4-Principes généraux.pdf'  
     },
     {
         id: uuidv4(),
-        image : '/cover.png',
+        image : '/cover_organisation.png',
         name: 'Schéma – Organisation fonctionnelle', 
-        document: '/demo5.pdf'
+        document: '/5-Organisation fonctionnelle.pdf'
     }, 
     {   
         id: uuidv4(),
-        image : '/cover.png',
+        image : '/cover_maintenance.png',
         name: 'Schéma – Organisation mission maintenance', 
-        document: '/demo5.pdf'
+        document: '/6-Missions maitenance.pdf'
     }
 
 ]

@@ -8,16 +8,15 @@ export default function Doc() {
 
   const scrollable = useRef(null); 
   
-  //const scrollHeight = scrollable.current?.clientHeight / 2;
   const scrollHeight = 250;
 
   const scrollUp = () => {
-    const scrollLength = -scrollHeight; //calcul moitié de la div final
+    const scrollLength = -scrollHeight; 
     scrollable.current.scrollBy({top: scrollLength, behavior: "smooth"});
   }
 
   const scrollDown = () => {
-    const scrollLength = scrollHeight; //calcul moitié de la div final
+    const scrollLength = scrollHeight; 
     scrollable.current.scrollBy({top: scrollLength, behavior: "smooth"})
   }
 
@@ -28,8 +27,8 @@ export default function Doc() {
         {/* Les documents */}
         {docData.map((slide, index) =>{
             return(     
-                <div className="single-doc-container" id={index} key={index}>
-                    <a href={slide.document} target="_blank" rel="noopener noreferrer">
+                <div className="single-doc-container" key={index}>
+                    <a href={slide.document} target="_blank" rel="noopener noreferrer"> 
                       <img src={slide.image} alt={slide.image}/>
                       <p className="doc-name">{slide.name}</p> 
                       <p className="download"><AiOutlineDownload/></p>

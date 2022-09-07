@@ -36,7 +36,7 @@ const iconStyle = new Style({
     anchor: [0.5, 46],
     anchorXUnits: 'fraction',
     anchorYUnits: 'pixels',
-    src: '/location.avif',
+    src: '/location.png',
     scale: 1.5
   }),
 });
@@ -53,21 +53,11 @@ function setMargin (newMargin){
   document.documentElement.style.setProperty('--contactInfo-marginTop', newMargin);
 }
 
-
   const [center, setCenter] = useState([1.25364, 44.41480]); //le centre de la carte après chargement
   const [zoom, setZoom] = useState(18.5)
   const [showLayer2, setShowLayer2] = useState(true);
   const [showCancelButton, setShowCancelButton] = useState(false); //Bouton annuler
   const [showSendButton, setShowSendButton] = useState(false);  //Bouton envoyer 
-
-  const [modal, setModal] = useState(false);
-  
-  if(modal) {
-    document.body.classList.add('active-modal')
-  } else {
-    document.body.classList.remove('active-modal')
-  }
-
 
   //Les valeurs depuis la forme
   const [formVal, setFormVal] = useState({
@@ -102,7 +92,6 @@ function setMargin (newMargin){
     }
   }
 
-
   const submitHandler = async (e) => {
     e.preventDefault();
     try{
@@ -123,7 +112,6 @@ function setMargin (newMargin){
       );
     }
   }
-
 
   //Efface tous les champs 
   const cancelForm = () =>{
@@ -171,13 +159,6 @@ function setMargin (newMargin){
               </Controls>
             </Map>
             <div>
-              <input
-                className="mapLocation"
-                type="checkbox"
-                checked={showLayer2}
-                onChange={event => setShowLayer2(event.target.checked)}
-                /> 
-              {/*81 rue du Moulin, 46140 SAUZET, France*/}
           </div>
           </div>
           <div className="contact-container">
@@ -250,7 +231,7 @@ function setMargin (newMargin){
               <p><AiTwotoneHome color="#F15a22"/> : 81 rue du Moulin, 46140 SAUZET, France.</p>
               <p><GiRotaryPhone color="#F15a22"/> : <a href="tel:+33 (0) 6 31 89 80 34">+33 (0) 6 31 89 80 34</a></p>
               <p><MdEmail color="#F15a22"/> : <a href="mailto:contact@gerobamaster.fr">contact@gerobamaster.fr</a></p>
-              <p><FaGlobe color="#F15a22"/> : <a href="https://www.gerobamaster.fr/login" target="_blank"  rel="noreferrer">www.geroba.fr</a></p>
+              <p><FaGlobe color="#F15a22"/> : <a href="/">www.geroba.fr</a></p>
             </div>
           </div>
         </div>

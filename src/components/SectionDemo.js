@@ -7,10 +7,6 @@ import "../style/Clients.scss";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 
-import axios from 'axios';
-import  GetDemo from './get/GetDemo';
-import {url_api} from '../conf/Config.js';
-
 function SectionDemo() {
 
   //Slider clients
@@ -43,41 +39,27 @@ function SectionDemo() {
     ]
   };
 
-
-    //notes sera l'état des donées reçues depuis la base de donnée
-    const [notes, getNotes] = useState('');
-
-    //Cette fonction extrait les données depuis la base de données en utilisant axios
-    const getAllNotes = () => {
-        axios.get(`${url_api}/demo/`)
-        .then((response) => {
-            const allNotes = response.data; //les données reçu depuis l'api sont gardées ici
-            getNotes(allNotes); //react state est mise à jour avec les données reçues
-        })
-        .catch(error => console.error(`Error: ${error}`));
-    }
-
-    //la fonction getAllNotes() est executée quand la page est rendue (rendered)
-    useEffect(() => {
-        getAllNotes();
-    })
-
-
   return (
         <div id="demo">
           <h1 className="title titleDemo">
               Démo
           </h1>
 
-          < GetDemo notes={notes}/>
+          <div className="sm-container">
+              <p className="sm-paragraph">
+                Ci-dessous, une présentation succincte de GEROBA et de quelques fonctionnalités.
+              </p>
+          </div>
           
           {/* Video demonstration */}
-          <div className="video-container" id="test">
+          <div className="video-container">
 
-            {/* Si la vidéo est enregistrée localement */}
+            <img src="/video.png" alt="Vidéo en cours de route"/>
+
+            {/* Si la vidéo est enregistrée localement
             <video className="videoDemo" width="640" height="264" controls
               src="/GerobaDemo.mp4" type="video/mp4">
-            </video>
+            </video> */}
 
 
             {/* Si la vidéo est en ligne 
@@ -96,7 +78,6 @@ function SectionDemo() {
               {ClientData.map((item, index) => (
               <div key="item" className="card"> 
                 <img className="clientLogo" id={index} src={item.imgPath} alt={item.title} title={item.title}/>
-                {/* <img className="clientLogo" style={{top: item.style}} id={index} src={item.imgPath} alt={item.title} title={item.title}/> */}
               </div>
               ))}
             </Slider>     
