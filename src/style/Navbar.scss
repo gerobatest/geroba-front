@@ -77,7 +77,6 @@
           cursor: pointer;
         }
 
-        //Se connecter
         .btn-login{
           background:none;
           border:none;
@@ -102,6 +101,8 @@
 
 //Scroll top btn
 .btn-top{
+  color: #F15a22;
+  font-size: 30px;
   position:fixed;
   bottom: 10px;
   right: 10px;
@@ -247,6 +248,9 @@
       margin-right: 20px;
     }
   }
+  .btn-top{
+    font-size: 28px;
+  }
 }
 
 
@@ -378,6 +382,9 @@
       width:14px;
       margin-right: 20px;
     }
+  }
+  .btn-top{
+    font-size: 28px;
   }
 }
 
@@ -519,6 +526,14 @@
       .navcont{
         .items{
           font-size: $fontsizeLg;
+          &.active{
+            border-bottom: 2px solid $orange;
+          }
+        
+          &:hover{
+            cursor: pointer;
+            border-bottom: 2px solid $orange;
+          }  
         }
       }
       .compte{
@@ -537,6 +552,9 @@
       }
     }
   }
+  .btn-top{
+    font-size: 32px;
+  }
 }
 
 
@@ -551,6 +569,15 @@
       .navcont{
         .items{
           font-size: 30px;
+
+          &.active{
+            border-bottom: 2.5px solid $orange;
+          }
+        
+          &:hover{
+            cursor: pointer;
+            border-bottom: 2.5px solid $orange;
+          }  
         }
       }
       .compte{
@@ -568,5 +595,8 @@
         font-size: 28px;
       }
     }
+  }
+  .btn-top{
+    font-size: 50px;
   }
 }

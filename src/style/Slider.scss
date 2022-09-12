@@ -4,9 +4,12 @@
 .slider{
   width:100%;
   height: 95vh;
-  max-height: 1306px;
   position: relative;
   overflow: hidden;
+
+  .invisible{
+    display: none;
+  }
 
   .textslide{
       position: absolute;
@@ -68,8 +71,8 @@
 //Ecran mobile 
 @include mediaXs{
   .slider{
-    transform: translateY(75px);
-    height:35vh;
+    transform: translateY(85px);
+    height:28vh;
     .textslide{
       line-height:35px;
       h1{
@@ -79,9 +82,9 @@
     .container-dots {
       bottom: 4%;
       .dot {
-          width: 12px;
-          height: 12px;
-        }
+        width: 11px;
+        height: 11px;
+      }
     } 
   }
 }
@@ -89,7 +92,7 @@
 @include mediaSm{
   .slider{
     transform: translateY(55px);
-    height:55vh;
+    height:42vh;
     .textslide{
       line-height:60px;
       h1{
@@ -106,7 +109,7 @@
 @include mediaMd{
   .slider{
     transform: translateY(50px);
-    height:50vh;
+    height: 42vh;
     .textslide{
       line-height:60px;
       h1{

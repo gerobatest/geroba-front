@@ -228,6 +228,7 @@
 //Smartphones 
 @include mediaXs{
     .footer{
+        margin-top: 0;
         .footerRow1{
             height: 800px;
             display:flex;

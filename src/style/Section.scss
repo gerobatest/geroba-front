@@ -78,7 +78,7 @@
     }
     //Comment ça marche : image en dessus du texte
     #about{
-        margin-top: 0; //enlève l'espacement
+        margin-top: 0; 
         display:flex;
         flex-direction: column;
         .sectionImage{
@@ -89,7 +89,7 @@
         }
     }
     #fonctions{
-        margin-top: 0px; //enlève l'espacement
+        margin-top: 0px;
     }
     .container-telechargement{
         .titleTelechargement{
