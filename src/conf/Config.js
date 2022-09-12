@@ -1,1 +1,1 @@
-export const url_api = "https://gero-api.herokuapp.com";
+export const url_api = "https://admin.geroba.fr";

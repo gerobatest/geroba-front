@@ -58,6 +58,7 @@ function setMargin (newMargin){
   const [showLayer2, setShowLayer2] = useState(true);
   const [showCancelButton, setShowCancelButton] = useState(false); //Bouton annuler
   const [showSendButton, setShowSendButton] = useState(false);  //Bouton envoyer 
+  const [error, setError] = useState(null); //feedback form
 
   //Les valeurs depuis la forme
   const [formVal, setFormVal] = useState({
@@ -94,23 +95,28 @@ function setMargin (newMargin){
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    try{
-      const {data} = await axios.post(`/send`, {
-        data: {
-          nom: formVal.name, 
-          prénom: formVal.fname,
-          email: formVal.email,
-          message: formVal.message
-        }
-      });
-      toast.success(data.message);
-    } catch(err){
-      toast.error(
-        err.response && err.response.data.message?
-        err.response.data.message: 
-        err.message
-      );
+
+    const settings = {
+      name: formVal.name, 
+      fname: formVal.fname,
+      mail: formVal.email,
+      message: formVal.message
     }
+
+    const messageobj = `Contact site GEROBA de ` + settings.fname + ` ` + settings.name;
+    const messagecontent = settings.mail + `: ` + settings.message;
+
+    axios.get(`https://www.gerobamaster.fr/sendMail?to=contact@geroba.fr&obj=` + messageobj + `&message= ` + messagecontent)
+      .then(res => {
+        if (res.status === 200)
+          toast.success("Message envoyé avec succès!")
+      })
+      .catch((error)=> {
+        if(error.response)
+          toast.error("Erreur! Message non envoyé.")
+      })
+    
+    cancelForm();
   }
 
   //Efface tous les champs 
@@ -167,18 +173,6 @@ function setMargin (newMargin){
               Contactez-nous
             </h1> 
             <form id="contact-form" onSubmit={submitHandler}>
-              {/* Nom */}
-              <div>
-                <input 
-                  type="text" 
-                  id="name" 
-                  name="name" 
-                  defaultValue={formVal.name} 
-                  onChange={handleChange} 
-                  required="required"
-                />
-                <span className="floating-label">Nom<span className="star">*</span></span>
-              </div>
               {/* Prénom */}
               <div>
                 <input 
@@ -191,6 +185,18 @@ function setMargin (newMargin){
                   />
                 <span className="floating-label">Prénom<span className="star">*</span></span>
               </div>
+              {/* Nom */}
+              <div>
+                <input 
+                  type="text" 
+                  id="name" 
+                  name="name" 
+                  defaultValue={formVal.name} 
+                  onChange={handleChange} 
+                  required="required"
+                />
+                <span className="floating-label">Nom<span className="star">*</span></span>
+              </div>
               {/* Email */}
               <div>
                 <input 
@@ -202,6 +208,7 @@ function setMargin (newMargin){
                   required="required"
                   />
                 <span className="floating-label">Email<span className="star">*</span></span>
+                {error && <h2 style={{color: 'red'}}>{error}</h2>}
               </div>
               {/* Message */}
               <div>

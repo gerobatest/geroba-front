@@ -57,9 +57,9 @@ function Slider() {
         })}
 
         <div className='textslide'>
-            <h1>GESTION </h1>
-            <h1>ROUTES</h1>
-            <h1> BÂTIMENTS</h1>
+            <h1>GEstion</h1>
+            <h1>ROutes et</h1>
+            <h1>BAtiments</h1>
         </div>
         
         <div className='container-dots'> 

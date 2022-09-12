@@ -9,6 +9,7 @@ const SectionText = (props) => {
   return (
     <>
       <div id="home">
+        <h1 className="invisible">GEROBA FR, Gestion de routes et bâtiments</h1>
         <Slider/>
         {/* Solution de mobilité   */}
         <div className="sectionContainer">

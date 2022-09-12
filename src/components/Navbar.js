@@ -43,7 +43,7 @@ const Navbar = () => {
             <div className='header' id="header">
                 <nav className={`nav ${showLinks? "show-nav" : "hide-nav"}`}>
                     <div className='logo'>
-                        <Link to="/#" onClick={() => window.location.reload()} ><img src="/logo-geroba.png" className="geroba" alt="logo"></img></Link>
+                        <Link to="/#" onClick={() => window.location.reload()} ><img src="/logo-geroba.png" className="geroba" alt="Logo Geroba"></img></Link>
                         
                         <button className='navbar_burger' onClick={handleShowLink}>
                             <span className='burger-bar'></span>
